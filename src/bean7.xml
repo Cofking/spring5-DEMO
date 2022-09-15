@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="mybean" class="com.Factorybean.mybean" scope="prototype">
+
+    </bean>
+<!--    bean作用域-->
+<!--    在Spring里面可以设置创建bean实例是单实例还是多实例-->
+<!--在默认情况下 bean是单实例对象-->
+<!--    scope="singleton" 默认值 单实例 加载配置文件时 就会设置一个单例对象-->
+<!--    scope="prototype" 多实例       加载文件不会创建对象       只在调用getBean() 方法的时候创建多实例对象 每次新建新对象-->
+<!--   scope="requset" 放在请求域中-->
+<!--   scope="session" 放在会话域中-->
+
+</beans>
+
+
+

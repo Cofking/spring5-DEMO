@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+">
+
+<!--    开启扫描  默认过滤器 扫描所有文件 -->
+<context:component-scan base-package="com.注解" ></context:component-scan>
+
+
+<!--    配置外部文件属性 使注解可以获取值-->
+   <bean id="abc" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+       <property name="locations" >
+           <array>
+               <value>classpath:JDBC.properties</value>
+           </array>
+       </property>
+   </bean>
+<!--    use-default-filters="false" 不使用默认过滤器-->
+<!--    include-filter 包括过滤器-->
+<!--    type="annotation" 类型为注解 -->
+<!--    expression="org.springframework.stereotype.Controller   扫描Controller-->
+
+
+<!--    只扫描 Controller过滤器-->
+<!--    <context:component-scan base-package="com.注解" use-default-filters="false">-->
+<!--        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+<!--    </context:component-scan>-->
+
+<!--    使用默认过滤器-->
+<!--    exclude-filter 排除过滤器-->
+
+<!--    不扫描Controoler过滤器-->
+<!--    <context:component-scan base-package="com.注解">-->
+<!--        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+<!--    </context:component-scan>-->
+
+
+
+
+
+
+</beans>

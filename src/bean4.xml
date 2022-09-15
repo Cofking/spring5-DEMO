@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    &lt;!&ndash;   级联赋值  写法一&ndash;&gt;-->
+<!--    <bean id="two" class="com.bean.two">-->
+<!--        <property name="name" value="员工1"></property>-->
+<!--        <property name="code" value="25"></property>-->
+<!--        &lt;!&ndash;   级联赋值   写法1  外部引用&ndash;&gt;-->
+<!--        <property name="Oname" ref="Oname"></property>-->
+<!--    </bean>-->
+
+<!--    <bean id="Oname" class="com.bean.one">-->
+<!--        <property name="Oname" value="部门二"></property>-->
+<!--    </bean>-->
+
+
+
+    <!--   级联赋值 写法二-->
+    <bean id="two" class="com.bean.two">
+        <property name="name" value="员工1"></property>
+        <property name="code" value="25"></property>
+        <!--   级联赋值   写法1  外部引用-->
+        <property name="Oname" ref="Oname"></property>
+        <!--   级联赋值   写法2 在写法1的基础上加上以下代码  直接点 需要get方法-->
+                <property name="Oname.Oname" value="部门三"></property>
+    </bean>
+
+    <bean id="Oname" class="com.bean.one"></bean>
+
+
+
+</beans>

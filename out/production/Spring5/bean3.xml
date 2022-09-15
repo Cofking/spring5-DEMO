@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    内部bean-->
+<bean id="two" class="com.bean.two">
+    <property name="name" value="员工1"></property>
+    <property name="code" value="25"></property>
+
+<!--    将bean写在属性内  -->
+    <property name="Oname">
+
+        <bean id="Oname" class="com.bean.one">
+            <property name="Oname" value="部门一"></property>
+        </bean>
+
+    </property>
+</bean>
+
+
+
+
+
+
+
+
+</beans>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    基于xml注入集合属性方法-->
+    <bean id="one" class="com.collection.Stu">
+        <!--        数组类型属性注入-->
+        <property name="courses">
+            <list>
+                <value>语文</value>
+            </list>
+        </property>
+        <!--                list类型属性注入-->
+        <property name="list">
+            <list>
+                <value>芜湖</value>
+
+            </list>
+        </property>
+        <!--               map类型属性注入-->
+        <property name="map">
+            <map>
+                <entry key="JAVA" value="java"></entry>
+
+            </map>
+        </property>
+        <!--             set类型属性注入 -->
+        <property name="set">
+            <set>
+                <value>1</value>
+            </set>
+        </property>
+
+        <!--        注入list集合类型  值是对象-->
+        <property name="courseList">
+            <list>
+                <ref bean="coures1"></ref>
+                <ref bean="coures2"></ref>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="coures1" class="com.collection.course">
+        <property name="cname" value="java"></property>
+
+    </bean>
+
+    <bean id="coures2" class="com.collection.course">
+        <property name="cname" value="java3"></property>
+
+    </bean>
+
+</beans>
